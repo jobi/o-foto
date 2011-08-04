@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C8D0444013EA3B6900273F9A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0443F13EA3B6900273F9A /* UIKit.framework */; };
+		C8D0444213EA3B6900273F9A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0444113EA3B6900273F9A /* Foundation.framework */; };
+		C8D0444413EA3B6900273F9A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0444313EA3B6900273F9A /* CoreGraphics.framework */; };
+		C8D0444A13EA3B6900273F9A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C8D0444813EA3B6900273F9A /* InfoPlist.strings */; };
+		C8D0444C13EA3B6900273F9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D0444B13EA3B6900273F9A /* main.m */; };
+		C8D0445013EA3B6900273F9A /* PhotoPlaygroundAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D0444F13EA3B6900273F9A /* PhotoPlaygroundAppDelegate.m */; };
+		C8D0445313EA3B6900273F9A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8D0445113EA3B6900273F9A /* MainWindow.xib */; };
+		C8D0445613EA3B6900273F9A /* PhotoPlaygroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D0445513EA3B6900273F9A /* PhotoPlaygroundViewController.m */; };
+		C8D0445913EA3B6900273F9A /* PhotoPlaygroundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8D0445713EA3B6900273F9A /* PhotoPlaygroundViewController.xib */; };
+		C8D0446113EA3B6900273F9A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0446013EA3B6900273F9A /* SenTestingKit.framework */; };
+		C8D0446213EA3B6900273F9A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0443F13EA3B6900273F9A /* UIKit.framework */; };
+		C8D0446313EA3B6900273F9A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0444113EA3B6900273F9A /* Foundation.framework */; };
+		C8D0446413EA3B6900273F9A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0444313EA3B6900273F9A /* CoreGraphics.framework */; };
+		C8D0446C13EA3B6900273F9A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C8D0446A13EA3B6900273F9A /* InfoPlist.strings */; };
+		C8D0446E13EA3B6900273F9A /* PhotoPlaygroundTests.h in Resources */ = {isa = PBXBuildFile; fileRef = C8D0446D13EA3B6900273F9A /* PhotoPlaygroundTests.h */; };
+		C8D0447013EA3B6900273F9A /* PhotoPlaygroundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D0446F13EA3B6900273F9A /* PhotoPlaygroundTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C8D0446513EA3B6900273F9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C8D0443213EA3B6900273F9A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C8D0443A13EA3B6900273F9A;
+			remoteInfo = PhotoPlayground;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C8D0443B13EA3B6900273F9A /* PhotoPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8D0443F13EA3B6900273F9A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C8D0444113EA3B6900273F9A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C8D0444313EA3B6900273F9A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C8D0444713EA3B6900273F9A /* PhotoPlayground-Info.plist */ = {isa = PBXFileReference; path = "PhotoPlayground-Info.plist"; sourceTree = "<group>"; };
+		C8D0444913EA3B6900273F9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C8D0444B13EA3B6900273F9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C8D0444D13EA3B6900273F9A /* PhotoPlayground-Prefix.pch */ = {isa = PBXFileReference; path = "PhotoPlayground-Prefix.pch"; sourceTree = "<group>"; };
+		C8D0444E13EA3B6900273F9A /* PhotoPlaygroundAppDelegate.h */ = {isa = PBXFileReference; path = PhotoPlaygroundAppDelegate.h; sourceTree = "<group>"; };
+		C8D0444F13EA3B6900273F9A /* PhotoPlaygroundAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoPlaygroundAppDelegate.m; sourceTree = "<group>"; };
+		C8D0445213EA3B6900273F9A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		C8D0445413EA3B6900273F9A /* PhotoPlaygroundViewController.h */ = {isa = PBXFileReference; path = PhotoPlaygroundViewController.h; sourceTree = "<group>"; };
+		C8D0445513EA3B6900273F9A /* PhotoPlaygroundViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoPlaygroundViewController.m; sourceTree = "<group>"; };
+		C8D0445813EA3B6900273F9A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PhotoPlaygroundViewController.xib; sourceTree = "<group>"; };
+		C8D0445F13EA3B6900273F9A /* PhotoPlaygroundTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoPlaygroundTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8D0446013EA3B6900273F9A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C8D0446913EA3B6900273F9A /* PhotoPlaygroundTests-Info.plist */ = {isa = PBXFileReference; path = "PhotoPlaygroundTests-Info.plist"; sourceTree = "<group>"; };
+		C8D0446B13EA3B6900273F9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C8D0446D13EA3B6900273F9A /* PhotoPlaygroundTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoPlaygroundTests.h; sourceTree = "<group>"; };
+		C8D0446F13EA3B6900273F9A /* PhotoPlaygroundTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoPlaygroundTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C8D0443813EA3B6900273F9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8D0444013EA3B6900273F9A /* UIKit.framework in Frameworks */,
+				C8D0444213EA3B6900273F9A /* Foundation.framework in Frameworks */,
+				C8D0444413EA3B6900273F9A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8D0445B13EA3B6900273F9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8D0446113EA3B6900273F9A /* SenTestingKit.framework in Frameworks */,
+				C8D0446213EA3B6900273F9A /* UIKit.framework in Frameworks */,
+				C8D0446313EA3B6900273F9A /* Foundation.framework in Frameworks */,
+				C8D0446413EA3B6900273F9A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C8D0443013EA3B6900273F9A = {
+			isa = PBXGroup;
+			children = (
+				C8D0444513EA3B6900273F9A /* PhotoPlayground */,
+				C8D0446713EA3B6900273F9A /* PhotoPlaygroundTests */,
+				C8D0443E13EA3B6900273F9A /* Frameworks */,
+				C8D0443C13EA3B6900273F9A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C8D0443C13EA3B6900273F9A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C8D0443B13EA3B6900273F9A /* PhotoPlayground.app */,
+				C8D0445F13EA3B6900273F9A /* PhotoPlaygroundTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C8D0443E13EA3B6900273F9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8D0443F13EA3B6900273F9A /* UIKit.framework */,
+				C8D0444113EA3B6900273F9A /* Foundation.framework */,
+				C8D0444313EA3B6900273F9A /* CoreGraphics.framework */,
+				C8D0446013EA3B6900273F9A /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C8D0444513EA3B6900273F9A /* PhotoPlayground */ = {
+			isa = PBXGroup;
+			children = (
+				C8D0444E13EA3B6900273F9A /* PhotoPlaygroundAppDelegate.h */,
+				C8D0444F13EA3B6900273F9A /* PhotoPlaygroundAppDelegate.m */,
+				C8D0445113EA3B6900273F9A /* MainWindow.xib */,
+				C8D0445413EA3B6900273F9A /* PhotoPlaygroundViewController.h */,
+				C8D0445513EA3B6900273F9A /* PhotoPlaygroundViewController.m */,
+				C8D0445713EA3B6900273F9A /* PhotoPlaygroundViewController.xib */,
+				C8D0444613EA3B6900273F9A /* Supporting Files */,
+			);
+			path = PhotoPlayground;
+			sourceTree = "<group>";
+		};
+		C8D0444613EA3B6900273F9A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C8D0444713EA3B6900273F9A /* PhotoPlayground-Info.plist */,
+				C8D0444813EA3B6900273F9A /* InfoPlist.strings */,
+				C8D0444B13EA3B6900273F9A /* main.m */,
+				C8D0444D13EA3B6900273F9A /* PhotoPlayground-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C8D0446713EA3B6900273F9A /* PhotoPlaygroundTests */ = {
+			isa = PBXGroup;
+			children = (
+				C8D0446D13EA3B6900273F9A /* PhotoPlaygroundTests.h */,
+				C8D0446F13EA3B6900273F9A /* PhotoPlaygroundTests.m */,
+				C8D0446813EA3B6900273F9A /* Supporting Files */,
+			);
+			path = PhotoPlaygroundTests;
+			sourceTree = "<group>";
+		};
+		C8D0446813EA3B6900273F9A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C8D0446913EA3B6900273F9A /* PhotoPlaygroundTests-Info.plist */,
+				C8D0446A13EA3B6900273F9A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C8D0443A13EA3B6900273F9A /* PhotoPlayground */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8D0447313EA3B6900273F9A /* Build configuration list for PBXNativeTarget "PhotoPlayground" */;
+			buildPhases = (
+				C8D0443713EA3B6900273F9A /* Sources */,
+				C8D0443813EA3B6900273F9A /* Frameworks */,
+				C8D0443913EA3B6900273F9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhotoPlayground;
+			productName = PhotoPlayground;
+			productReference = C8D0443B13EA3B6900273F9A /* PhotoPlayground.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C8D0445E13EA3B6900273F9A /* PhotoPlaygroundTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8D0447613EA3B6900273F9A /* Build configuration list for PBXNativeTarget "PhotoPlaygroundTests" */;
+			buildPhases = (
+				C8D0445A13EA3B6900273F9A /* Sources */,
+				C8D0445B13EA3B6900273F9A /* Frameworks */,
+				C8D0445C13EA3B6900273F9A /* Resources */,
+				C8D0445D13EA3B6900273F9A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C8D0446613EA3B6900273F9A /* PBXTargetDependency */,
+			);
+			name = PhotoPlaygroundTests;
+			productName = PhotoPlaygroundTests;
+			productReference = C8D0445F13EA3B6900273F9A /* PhotoPlaygroundTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C8D0443213EA3B6900273F9A /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C8D0443513EA3B6900273F9A /* Build configuration list for PBXProject "PhotoPlayground" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C8D0443013EA3B6900273F9A;
+			productRefGroup = C8D0443C13EA3B6900273F9A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C8D0443A13EA3B6900273F9A /* PhotoPlayground */,
+				C8D0445E13EA3B6900273F9A /* PhotoPlaygroundTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C8D0443913EA3B6900273F9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8D0444A13EA3B6900273F9A /* InfoPlist.strings in Resources */,
+				C8D0445313EA3B6900273F9A /* MainWindow.xib in Resources */,
+				C8D0445913EA3B6900273F9A /* PhotoPlaygroundViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8D0445C13EA3B6900273F9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8D0446C13EA3B6900273F9A /* InfoPlist.strings in Resources */,
+				C8D0446E13EA3B6900273F9A /* PhotoPlaygroundTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C8D0445D13EA3B6900273F9A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C8D0443713EA3B6900273F9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8D0444C13EA3B6900273F9A /* main.m in Sources */,
+				C8D0445013EA3B6900273F9A /* PhotoPlaygroundAppDelegate.m in Sources */,
+				C8D0445613EA3B6900273F9A /* PhotoPlaygroundViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8D0445A13EA3B6900273F9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8D0447013EA3B6900273F9A /* PhotoPlaygroundTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C8D0446613EA3B6900273F9A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C8D0443A13EA3B6900273F9A /* PhotoPlayground */;
+			targetProxy = C8D0446513EA3B6900273F9A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C8D0444813EA3B6900273F9A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8D0444913EA3B6900273F9A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C8D0445113EA3B6900273F9A /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8D0445213EA3B6900273F9A /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		C8D0445713EA3B6900273F9A /* PhotoPlaygroundViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8D0445813EA3B6900273F9A /* en */,
+			);
+			name = PhotoPlaygroundViewController.xib;
+			sourceTree = "<group>";
+		};
+		C8D0446A13EA3B6900273F9A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8D0446B13EA3B6900273F9A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C8D0447113EA3B6900273F9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		C8D0447213EA3B6900273F9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C8D0447413EA3B6900273F9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhotoPlayground/PhotoPlayground-Prefix.pch";
+				INFOPLIST_FILE = "PhotoPlayground/PhotoPlayground-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C8D0447513EA3B6900273F9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhotoPlayground/PhotoPlayground-Prefix.pch";
+				INFOPLIST_FILE = "PhotoPlayground/PhotoPlayground-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C8D0447713EA3B6900273F9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PhotoPlayground.app/PhotoPlayground";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhotoPlayground/PhotoPlayground-Prefix.pch";
+				INFOPLIST_FILE = "PhotoPlaygroundTests/PhotoPlaygroundTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C8D0447813EA3B6900273F9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PhotoPlayground.app/PhotoPlayground";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhotoPlayground/PhotoPlayground-Prefix.pch";
+				INFOPLIST_FILE = "PhotoPlaygroundTests/PhotoPlaygroundTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C8D0443513EA3B6900273F9A /* Build configuration list for PBXProject "PhotoPlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8D0447113EA3B6900273F9A /* Debug */,
+				C8D0447213EA3B6900273F9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C8D0447313EA3B6900273F9A /* Build configuration list for PBXNativeTarget "PhotoPlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8D0447413EA3B6900273F9A /* Debug */,
+				C8D0447513EA3B6900273F9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C8D0447613EA3B6900273F9A /* Build configuration list for PBXNativeTarget "PhotoPlaygroundTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8D0447713EA3B6900273F9A /* Debug */,
+				C8D0447813EA3B6900273F9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C8D0443213EA3B6900273F9A /* Project object */;
+}
