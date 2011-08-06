@@ -23,6 +23,20 @@
 		C8D0446C13EA3B6900273F9A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C8D0446A13EA3B6900273F9A /* InfoPlist.strings */; };
 		C8D0446E13EA3B6900273F9A /* PhotoPlaygroundTests.h in Resources */ = {isa = PBXBuildFile; fileRef = C8D0446D13EA3B6900273F9A /* PhotoPlaygroundTests.h */; };
 		C8D0447013EA3B6900273F9A /* PhotoPlaygroundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D0446F13EA3B6900273F9A /* PhotoPlaygroundTests.m */; };
+		C8D0448913EA3F9300273F9A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0448813EA3F9300273F9A /* CFNetwork.framework */; };
+		C8D047BE13EDC0CD00273F9A /* LFHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D0476F13EDC0CC00273F9A /* LFHTTPRequest.m */; };
+		C8D047BF13EDC0CD00273F9A /* LFHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D0476F13EDC0CC00273F9A /* LFHTTPRequest.m */; };
+		C8D047C013EDC0CD00273F9A /* LFSiteReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D0477113EDC0CC00273F9A /* LFSiteReachability.m */; };
+		C8D047C113EDC0CD00273F9A /* LFSiteReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D0477113EDC0CC00273F9A /* LFSiteReachability.m */; };
+		C8D047C213EDC0CD00273F9A /* NSData+LFHTTPFormExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D0477413EDC0CC00273F9A /* NSData+LFHTTPFormExtensions.m */; };
+		C8D047C313EDC0CD00273F9A /* NSData+LFHTTPFormExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D0477413EDC0CC00273F9A /* NSData+LFHTTPFormExtensions.m */; };
+		C8D0480213EDC0DA00273F9A /* ObjectiveFlickr.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D047FE13EDC0DA00273F9A /* ObjectiveFlickr.m */; };
+		C8D0480313EDC0DA00273F9A /* ObjectiveFlickr.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D047FE13EDC0DA00273F9A /* ObjectiveFlickr.m */; };
+		C8D0480413EDC0DA00273F9A /* OFXMLMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D0480113EDC0DA00273F9A /* OFXMLMapper.m */; };
+		C8D0480513EDC0DA00273F9A /* OFXMLMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D0480113EDC0DA00273F9A /* OFXMLMapper.m */; };
+		C8D0480713EDC15900273F9A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0480613EDC15900273F9A /* CFNetwork.framework */; };
+		C8D0480E13EDC2C500273F9A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0480D13EDC2C500273F9A /* SystemConfiguration.framework */; };
+		C8D0481013EDC2D400273F9A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0480F13EDC2D300273F9A /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,22 +54,39 @@
 		C8D0443F13EA3B6900273F9A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C8D0444113EA3B6900273F9A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C8D0444313EA3B6900273F9A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		C8D0444713EA3B6900273F9A /* PhotoPlayground-Info.plist */ = {isa = PBXFileReference; path = "PhotoPlayground-Info.plist"; sourceTree = "<group>"; };
+		C8D0444713EA3B6900273F9A /* PhotoPlayground-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhotoPlayground-Info.plist"; sourceTree = "<group>"; };
 		C8D0444913EA3B6900273F9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C8D0444B13EA3B6900273F9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C8D0444D13EA3B6900273F9A /* PhotoPlayground-Prefix.pch */ = {isa = PBXFileReference; path = "PhotoPlayground-Prefix.pch"; sourceTree = "<group>"; };
-		C8D0444E13EA3B6900273F9A /* PhotoPlaygroundAppDelegate.h */ = {isa = PBXFileReference; path = PhotoPlaygroundAppDelegate.h; sourceTree = "<group>"; };
+		C8D0444D13EA3B6900273F9A /* PhotoPlayground-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhotoPlayground-Prefix.pch"; sourceTree = "<group>"; };
+		C8D0444E13EA3B6900273F9A /* PhotoPlaygroundAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoPlaygroundAppDelegate.h; sourceTree = "<group>"; };
 		C8D0444F13EA3B6900273F9A /* PhotoPlaygroundAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoPlaygroundAppDelegate.m; sourceTree = "<group>"; };
 		C8D0445213EA3B6900273F9A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		C8D0445413EA3B6900273F9A /* PhotoPlaygroundViewController.h */ = {isa = PBXFileReference; path = PhotoPlaygroundViewController.h; sourceTree = "<group>"; };
+		C8D0445413EA3B6900273F9A /* PhotoPlaygroundViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoPlaygroundViewController.h; sourceTree = "<group>"; };
 		C8D0445513EA3B6900273F9A /* PhotoPlaygroundViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoPlaygroundViewController.m; sourceTree = "<group>"; };
 		C8D0445813EA3B6900273F9A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PhotoPlaygroundViewController.xib; sourceTree = "<group>"; };
 		C8D0445F13EA3B6900273F9A /* PhotoPlaygroundTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoPlaygroundTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8D0446013EA3B6900273F9A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		C8D0446913EA3B6900273F9A /* PhotoPlaygroundTests-Info.plist */ = {isa = PBXFileReference; path = "PhotoPlaygroundTests-Info.plist"; sourceTree = "<group>"; };
+		C8D0446913EA3B6900273F9A /* PhotoPlaygroundTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhotoPlaygroundTests-Info.plist"; sourceTree = "<group>"; };
 		C8D0446B13EA3B6900273F9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C8D0446D13EA3B6900273F9A /* PhotoPlaygroundTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoPlaygroundTests.h; sourceTree = "<group>"; };
 		C8D0446F13EA3B6900273F9A /* PhotoPlaygroundTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoPlaygroundTests.m; sourceTree = "<group>"; };
+		C8D0448813EA3F9300273F9A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		C8D0448B13EA422C00273F9A /* FlickrApiKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrApiKey.h; sourceTree = "<group>"; };
+		C8D0476E13EDC0CC00273F9A /* LFHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFHTTPRequest.h; sourceTree = "<group>"; };
+		C8D0476F13EDC0CC00273F9A /* LFHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFHTTPRequest.m; sourceTree = "<group>"; };
+		C8D0477013EDC0CC00273F9A /* LFSiteReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFSiteReachability.h; sourceTree = "<group>"; };
+		C8D0477113EDC0CC00273F9A /* LFSiteReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFSiteReachability.m; sourceTree = "<group>"; };
+		C8D0477213EDC0CC00273F9A /* LFWebAPIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFWebAPIKit.h; sourceTree = "<group>"; };
+		C8D0477313EDC0CC00273F9A /* NSData+LFHTTPFormExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+LFHTTPFormExtensions.h"; sourceTree = "<group>"; };
+		C8D0477413EDC0CC00273F9A /* NSData+LFHTTPFormExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+LFHTTPFormExtensions.m"; sourceTree = "<group>"; };
+		C8D047FD13EDC0DA00273F9A /* ObjectiveFlickr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveFlickr.h; sourceTree = "<group>"; };
+		C8D047FE13EDC0DA00273F9A /* ObjectiveFlickr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveFlickr.m; sourceTree = "<group>"; };
+		C8D047FF13EDC0DA00273F9A /* OFUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFUtilities.h; sourceTree = "<group>"; };
+		C8D0480013EDC0DA00273F9A /* OFXMLMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFXMLMapper.h; sourceTree = "<group>"; };
+		C8D0480113EDC0DA00273F9A /* OFXMLMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFXMLMapper.m; sourceTree = "<group>"; };
+		C8D0480613EDC15900273F9A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		C8D0480D13EDC2C500273F9A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C8D0480F13EDC2D300273F9A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8D0481013EDC2D400273F9A /* SystemConfiguration.framework in Frameworks */,
+				C8D0448913EA3F9300273F9A /* CFNetwork.framework in Frameworks */,
 				C8D0444013EA3B6900273F9A /* UIKit.framework in Frameworks */,
 				C8D0444213EA3B6900273F9A /* Foundation.framework in Frameworks */,
 				C8D0444413EA3B6900273F9A /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +106,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8D0480E13EDC2C500273F9A /* SystemConfiguration.framework in Frameworks */,
+				C8D0480713EDC15900273F9A /* CFNetwork.framework in Frameworks */,
 				C8D0446113EA3B6900273F9A /* SenTestingKit.framework in Frameworks */,
 				C8D0446213EA3B6900273F9A /* UIKit.framework in Frameworks */,
 				C8D0446313EA3B6900273F9A /* Foundation.framework in Frameworks */,
@@ -86,6 +121,10 @@
 		C8D0443013EA3B6900273F9A = {
 			isa = PBXGroup;
 			children = (
+				C8D0480F13EDC2D300273F9A /* SystemConfiguration.framework */,
+				C8D0480D13EDC2C500273F9A /* SystemConfiguration.framework */,
+				C8D047FC13EDC0DA00273F9A /* Source */,
+				C8D0476D13EDC0CC00273F9A /* LFWebAPIKit */,
 				C8D0444513EA3B6900273F9A /* PhotoPlayground */,
 				C8D0446713EA3B6900273F9A /* PhotoPlaygroundTests */,
 				C8D0443E13EA3B6900273F9A /* Frameworks */,
@@ -105,6 +144,8 @@
 		C8D0443E13EA3B6900273F9A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C8D0480613EDC15900273F9A /* CFNetwork.framework */,
+				C8D0448813EA3F9300273F9A /* CFNetwork.framework */,
 				C8D0443F13EA3B6900273F9A /* UIKit.framework */,
 				C8D0444113EA3B6900273F9A /* Foundation.framework */,
 				C8D0444313EA3B6900273F9A /* CoreGraphics.framework */,
@@ -123,6 +164,7 @@
 				C8D0445513EA3B6900273F9A /* PhotoPlaygroundViewController.m */,
 				C8D0445713EA3B6900273F9A /* PhotoPlaygroundViewController.xib */,
 				C8D0444613EA3B6900273F9A /* Supporting Files */,
+				C8D0448B13EA422C00273F9A /* FlickrApiKey.h */,
 			);
 			path = PhotoPlayground;
 			sourceTree = "<group>";
@@ -155,6 +197,34 @@
 				C8D0446A13EA3B6900273F9A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C8D0476D13EDC0CC00273F9A /* LFWebAPIKit */ = {
+			isa = PBXGroup;
+			children = (
+				C8D0476E13EDC0CC00273F9A /* LFHTTPRequest.h */,
+				C8D0476F13EDC0CC00273F9A /* LFHTTPRequest.m */,
+				C8D0477013EDC0CC00273F9A /* LFSiteReachability.h */,
+				C8D0477113EDC0CC00273F9A /* LFSiteReachability.m */,
+				C8D0477213EDC0CC00273F9A /* LFWebAPIKit.h */,
+				C8D0477313EDC0CC00273F9A /* NSData+LFHTTPFormExtensions.h */,
+				C8D0477413EDC0CC00273F9A /* NSData+LFHTTPFormExtensions.m */,
+			);
+			name = LFWebAPIKit;
+			path = objectiveflickr/LFWebAPIKit;
+			sourceTree = "<group>";
+		};
+		C8D047FC13EDC0DA00273F9A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C8D047FD13EDC0DA00273F9A /* ObjectiveFlickr.h */,
+				C8D047FE13EDC0DA00273F9A /* ObjectiveFlickr.m */,
+				C8D047FF13EDC0DA00273F9A /* OFUtilities.h */,
+				C8D0480013EDC0DA00273F9A /* OFXMLMapper.h */,
+				C8D0480113EDC0DA00273F9A /* OFXMLMapper.m */,
+			);
+			name = Source;
+			path = objectiveflickr/Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +277,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
 			);
 			mainGroup = C8D0443013EA3B6900273F9A;
 			productRefGroup = C8D0443C13EA3B6900273F9A /* Products */;
@@ -265,6 +336,11 @@
 				C8D0444C13EA3B6900273F9A /* main.m in Sources */,
 				C8D0445013EA3B6900273F9A /* PhotoPlaygroundAppDelegate.m in Sources */,
 				C8D0445613EA3B6900273F9A /* PhotoPlaygroundViewController.m in Sources */,
+				C8D047BE13EDC0CD00273F9A /* LFHTTPRequest.m in Sources */,
+				C8D047C013EDC0CD00273F9A /* LFSiteReachability.m in Sources */,
+				C8D047C213EDC0CD00273F9A /* NSData+LFHTTPFormExtensions.m in Sources */,
+				C8D0480213EDC0DA00273F9A /* ObjectiveFlickr.m in Sources */,
+				C8D0480413EDC0DA00273F9A /* OFXMLMapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +349,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8D0447013EA3B6900273F9A /* PhotoPlaygroundTests.m in Sources */,
+				C8D047BF13EDC0CD00273F9A /* LFHTTPRequest.m in Sources */,
+				C8D047C113EDC0CD00273F9A /* LFSiteReachability.m in Sources */,
+				C8D047C313EDC0CD00273F9A /* NSData+LFHTTPFormExtensions.m in Sources */,
+				C8D0480313EDC0DA00273F9A /* ObjectiveFlickr.m in Sources */,
+				C8D0480513EDC0DA00273F9A /* OFXMLMapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +425,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "~/src/objectiveflickr/Source ~/src/objectiveflickr/LFWebAPIKit";
 			};
 			name = Debug;
 		};
@@ -363,6 +445,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "~/src/objectiveflickr/Source ~/src/objectiveflickr/LFWebAPIKit";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -374,6 +457,7 @@
 				GCC_PREFIX_HEADER = "PhotoPlayground/PhotoPlayground-Prefix.pch";
 				INFOPLIST_FILE = "PhotoPlayground/PhotoPlayground-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "~/src/objectiveflickr/LFWebAPIKit ~/src/objectiveflickr/Source";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -383,8 +467,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoPlayground/PhotoPlayground-Prefix.pch";
+				"HEADER_SEARCH_PATHS[arch=*]" = "~/src/Ob";
 				INFOPLIST_FILE = "PhotoPlayground/PhotoPlayground-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "~/src/objectiveflickr/LFWebAPIKit ~/src/objectiveflickr/Source";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -403,6 +489,7 @@
 				INFOPLIST_FILE = "PhotoPlaygroundTests/PhotoPlaygroundTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "objectiveflickr/LFWebAPIKit objectiveflickr/Source";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -421,6 +508,7 @@
 				INFOPLIST_FILE = "PhotoPlaygroundTests/PhotoPlaygroundTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "objectiveflickr/LFWebAPIKit objectiveflickr/Source";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -444,6 +532,7 @@
 				C8D0447513EA3B6900273F9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C8D0447613EA3B6900273F9A /* Build configuration list for PBXNativeTarget "PhotoPlaygroundTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +541,7 @@
 				C8D0447813EA3B6900273F9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,6 +7,8 @@
 //
 
 #import "PhotoPlaygroundTests.h"
+#import "ObjectiveFlickr.h"
+#import "FlickrApiKey.h"
 
 @implementation PhotoPlaygroundTests
 
@@ -24,9 +26,15 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testFlickr
 {
-    STFail(@"Unit tests are not implemented yet in PhotoPlaygroundTests");
+    OFFlickrAPIContext *context = [[OFFlickrAPIContext alloc] initWithAPIKey:flickrApiKey.key
+                                                                sharedSecret:flickrApiKey.secret];
+    
+    STAssertTrue([context isMemberOfClass:[OFFlickrAPIContext class]],
+                 @"Successfully created a flickr API context");
+    
+    [context release];
 }
 
 @end
