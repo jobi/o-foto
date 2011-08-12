@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PhotoPlaygroundViewController : UIViewController
+
+@class OFFlickrAPIContext;
+
+@interface PhotoPlaygroundViewController : UIViewController {
+    @private
+    OFFlickrAPIContext *flickrAPIContext;
+}
+
+- (void)showAuthenticationViewWithURL:(NSURL *)authURL;
 
 @end

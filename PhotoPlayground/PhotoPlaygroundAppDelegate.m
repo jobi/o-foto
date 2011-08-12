@@ -7,22 +7,71 @@
 //
 
 #import "PhotoPlaygroundAppDelegate.h"
-
 #import "PhotoPlaygroundViewController.h"
+#import "FlickrApiKey.h"
+
+@interface PhotoPlaygroundAppDelegate()
+
+- (void)updateFromAuthState;
+- (void)showAuthenticationView;
+
+@end
 
 @implementation PhotoPlaygroundAppDelegate
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
+@synthesize authProvider;
+@synthesize flickrContext;
+
+- (id)init
+{
+    if ((self = [super init])) {
+        flickrContext = [[OFFlickrAPIContext alloc] initWithAPIKey:flickrApiKey.key
+                                                      sharedSecret:flickrApiKey.secret];
+        authProvider = [[FlickrAuthProvider alloc] initWithContext:flickrContext];
+        authProvider.delegate = self;
+    }
+    
+    return self;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    [self updateFromAuthState];
+    
     return YES;
 }
+
+- (void)showAuthenticationView
+{
+    NSURL *url = [flickrContext loginURLFromFrobDictionary:nil
+                                       requestedPermission:OFFlickrReadPermission];
+    
+    [self.viewController showAuthenticationViewWithURL:url];
+}
+
+- (void)updateFromAuthState
+{
+    switch (authProvider.authState) {
+        case FlickrAuthStateNeedsFrob:
+            [self showAuthenticationView];
+            break;
+        case FlickrAuthStateTokenQueried:
+        case FlickrAuthStateAuthenticated:
+            [self.viewController dismissModalViewControllerAnimated:YES];
+            //[self loadPhotos];
+            break;
+    }
+}
+
+- (void)authStateChanged:(FlickrAuthState)authState
+{
+    [self updateFromAuthState];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -61,6 +110,25 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    NSString *prefix = @"photoplayground://flickr-auth/?frob=";
+    NSString *urlString = [url absoluteString];
+    
+    if ([urlString hasPrefix:prefix]) {
+        NSString *frob = [urlString substringFromIndex:[prefix length]];
+        
+        [authProvider useFrob:frob];
+        
+        return YES;
+    }
+    
+    return NO;
 }
 
 - (void)dealloc

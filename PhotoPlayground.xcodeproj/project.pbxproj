@@ -37,6 +37,12 @@
 		C8D0480713EDC15900273F9A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0480613EDC15900273F9A /* CFNetwork.framework */; };
 		C8D0480E13EDC2C500273F9A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0480D13EDC2C500273F9A /* SystemConfiguration.framework */; };
 		C8D0481013EDC2D400273F9A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0480F13EDC2D300273F9A /* SystemConfiguration.framework */; };
+		C8D0481713EDC7F100273F9A /* FlickrAuthProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D0481613EDC7F100273F9A /* FlickrAuthProvider.m */; };
+		C8D0481813EDC7F100273F9A /* FlickrAuthProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D0481613EDC7F100273F9A /* FlickrAuthProvider.m */; };
+		C8D0481D13EDC9FD00273F9A /* FlickrAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D0481B13EDC9FD00273F9A /* FlickrAuthViewController.m */; };
+		C8D0481E13EDC9FD00273F9A /* FlickrAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D0481B13EDC9FD00273F9A /* FlickrAuthViewController.m */; };
+		C8D0481F13EDC9FD00273F9A /* FlickrAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8D0481C13EDC9FD00273F9A /* FlickrAuthViewController.xib */; };
+		C8D0482013EDC9FD00273F9A /* FlickrAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8D0481C13EDC9FD00273F9A /* FlickrAuthViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +93,11 @@
 		C8D0480613EDC15900273F9A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C8D0480D13EDC2C500273F9A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C8D0480F13EDC2D300273F9A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C8D0481513EDC7F100273F9A /* FlickrAuthProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAuthProvider.h; sourceTree = "<group>"; };
+		C8D0481613EDC7F100273F9A /* FlickrAuthProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrAuthProvider.m; sourceTree = "<group>"; };
+		C8D0481A13EDC9FC00273F9A /* FlickrAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAuthViewController.h; sourceTree = "<group>"; };
+		C8D0481B13EDC9FD00273F9A /* FlickrAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrAuthViewController.m; sourceTree = "<group>"; };
+		C8D0481C13EDC9FD00273F9A /* FlickrAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlickrAuthViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +176,11 @@
 				C8D0445713EA3B6900273F9A /* PhotoPlaygroundViewController.xib */,
 				C8D0444613EA3B6900273F9A /* Supporting Files */,
 				C8D0448B13EA422C00273F9A /* FlickrApiKey.h */,
+				C8D0481513EDC7F100273F9A /* FlickrAuthProvider.h */,
+				C8D0481613EDC7F100273F9A /* FlickrAuthProvider.m */,
+				C8D0481A13EDC9FC00273F9A /* FlickrAuthViewController.h */,
+				C8D0481B13EDC9FD00273F9A /* FlickrAuthViewController.m */,
+				C8D0481C13EDC9FD00273F9A /* FlickrAuthViewController.xib */,
 			);
 			path = PhotoPlayground;
 			sourceTree = "<group>";
@@ -298,6 +314,7 @@
 				C8D0444A13EA3B6900273F9A /* InfoPlist.strings in Resources */,
 				C8D0445313EA3B6900273F9A /* MainWindow.xib in Resources */,
 				C8D0445913EA3B6900273F9A /* PhotoPlaygroundViewController.xib in Resources */,
+				C8D0481F13EDC9FD00273F9A /* FlickrAuthViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +324,7 @@
 			files = (
 				C8D0446C13EA3B6900273F9A /* InfoPlist.strings in Resources */,
 				C8D0446E13EA3B6900273F9A /* PhotoPlaygroundTests.h in Resources */,
+				C8D0482013EDC9FD00273F9A /* FlickrAuthViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +359,8 @@
 				C8D047C213EDC0CD00273F9A /* NSData+LFHTTPFormExtensions.m in Sources */,
 				C8D0480213EDC0DA00273F9A /* ObjectiveFlickr.m in Sources */,
 				C8D0480413EDC0DA00273F9A /* OFXMLMapper.m in Sources */,
+				C8D0481713EDC7F100273F9A /* FlickrAuthProvider.m in Sources */,
+				C8D0481D13EDC9FD00273F9A /* FlickrAuthViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +374,8 @@
 				C8D047C313EDC0CD00273F9A /* NSData+LFHTTPFormExtensions.m in Sources */,
 				C8D0480313EDC0DA00273F9A /* ObjectiveFlickr.m in Sources */,
 				C8D0480513EDC0DA00273F9A /* OFXMLMapper.m in Sources */,
+				C8D0481813EDC7F100273F9A /* FlickrAuthProvider.m in Sources */,
+				C8D0481E13EDC9FD00273F9A /* FlickrAuthViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
