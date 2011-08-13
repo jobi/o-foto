@@ -7,15 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <QuartzCore/QuartzCore.h>
+#import "PhotoView.h"
 
 @class OFFlickrAPIContext;
 
-@interface PhotoPlaygroundViewController : UIViewController {
+@interface PhotoPlaygroundViewController : UIViewController <PhotoViewDelegate> {
     @private
     OFFlickrAPIContext *flickrAPIContext;
 }
 
 - (void)showAuthenticationViewWithURL:(NSURL *)authURL;
+- (void)addPhoto:(Photo *)photo;
 
 @end

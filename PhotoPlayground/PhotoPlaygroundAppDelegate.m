@@ -9,11 +9,13 @@
 #import "PhotoPlaygroundAppDelegate.h"
 #import "PhotoPlaygroundViewController.h"
 #import "FlickrApiKey.h"
+#import "Photo.h"
 
 @interface PhotoPlaygroundAppDelegate()
 
 - (void)updateFromAuthState;
 - (void)showAuthenticationView;
+- (void)loadPhotos;
 
 @end
 
@@ -60,9 +62,11 @@
             [self showAuthenticationView];
             break;
         case FlickrAuthStateTokenQueried:
+            [self.viewController dismissModalViewControllerAnimated:YES];
+            break;
         case FlickrAuthStateAuthenticated:
             [self.viewController dismissModalViewControllerAnimated:YES];
-            //[self loadPhotos];
+            [self loadPhotos];
             break;
     }
 }
@@ -72,6 +76,29 @@
     [self updateFromAuthState];
 }
 
+- (void)loadPhotos
+{
+    OFFlickrAPIRequest *recentRequest = [[OFFlickrAPIRequest alloc] initWithAPIContext:flickrContext];
+    
+    recentRequest.delegate = self;
+    [recentRequest callAPIMethodWithGET:@"flickr.photos.search"
+                              arguments:[NSDictionary dictionaryWithObjectsAndKeys:@"me", @"user_id",
+                                                                                   @"yaoshuang", @"tags", 
+                                                                                   nil]];
+}
+
+- (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest didCompleteWithResponse:(NSDictionary *)inResponseDictionary
+{    
+    NSArray *photos = [inResponseDictionary valueForKeyPath:@"photos.photo"];
+    
+    for (NSDictionary *photoDict in photos)
+        [self.viewController addPhoto:[Photo photoWithContext:flickrContext dictionary:photoDict]];
+}
+
+- (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest didFailWithError:(NSError *)inError
+{
+    NSLog(@"Got error %@", inError);
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
