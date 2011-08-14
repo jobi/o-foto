@@ -32,6 +32,11 @@
     [super viewDidLoad];
     
     photoViews = [[NSMutableArray alloc] init];
+    
+    NSString *imageName = [[NSBundle mainBundle] pathForResource:@"pattern" ofType:@"jpg"];
+    UIImage *image = [UIImage imageWithContentsOfFile:imageName];
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
 }
 
 - (void)viewDidUnload
