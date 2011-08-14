@@ -9,6 +9,8 @@
 #import "Photo.h"
 #import "ObjectiveFlickr.h"
 
+static NSDateFormatter *dateFormatter = nil;
+
 @interface Photo()
 
 - (id)initWithContext:(OFFlickrAPIContext *)context dictionary:(NSDictionary *)dictionary;
@@ -22,11 +24,18 @@
 @implementation Photo
 
 @synthesize title;
+@synthesize dateTaken;
 @synthesize context;
 @synthesize delegate;
 @synthesize mediumSizeURL;
 @synthesize dataConnection;
 @synthesize dataReceived;
+
++ (void)initialize
+{
+    dateFormatter = [[NSDateFormatter alloc]init];
+    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+}
 
 + (Photo *)photoWithContext:(OFFlickrAPIContext *)context dictionary:(NSDictionary *)dictionary;
 {
@@ -39,8 +48,10 @@
     if ((self = [super init])) {
         context = [aContext retain];
         title = [[dictionary valueForKeyPath:@"title"] copy];
-        mediumSizeURL = [context photoSourceURLFromDictionary:dictionary
-                                                         size:OFFlickrMediumSize];
+        mediumSizeURL = [[context photoSourceURLFromDictionary:dictionary
+                                                          size:OFFlickrMediumSize] retain];
+                
+        dateTaken = [[dateFormatter dateFromString:[dictionary valueForKeyPath:@"datetaken"]] retain];
     }
     
     return self;
@@ -72,9 +83,16 @@
     self.dataReceived = nil;
 }
 
+- (NSComparisonResult)compareByDateTaken:(id)obj
+{
+    Photo *photo = obj;
+    return [self.dateTaken compare:photo.dateTaken];
+}
+
 - (void)dealloc
 {
     [title release];
+    [dateTaken release];
     [context release];
     [mediumSizeURL release];
     [dataConnection release];

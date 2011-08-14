@@ -46,6 +46,7 @@
 		C8D0483413F4D6F100273F9A /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D0483313F4D6F100273F9A /* Photo.m */; };
 		C8D0483B13F62E5F00273F9A /* PhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D0483A13F62E5F00273F9A /* PhotoView.m */; };
 		C8D0485813F7845700273F9A /* pattern.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C8D0485713F7845700273F9A /* pattern.jpg */; };
+		C8D0485F13F78FBD00273F9A /* PhotoStream.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D0485E13F78FBD00273F9A /* PhotoStream.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,8 @@
 		C8D0483913F62E5F00273F9A /* PhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoView.h; sourceTree = "<group>"; };
 		C8D0483A13F62E5F00273F9A /* PhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoView.m; sourceTree = "<group>"; };
 		C8D0485713F7845700273F9A /* pattern.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pattern.jpg; path = graphics/pattern.jpg; sourceTree = "<group>"; };
+		C8D0485D13F78FBD00273F9A /* PhotoStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoStream.h; sourceTree = "<group>"; };
+		C8D0485E13F78FBD00273F9A /* PhotoStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoStream.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +197,8 @@
 				C8D0483313F4D6F100273F9A /* Photo.m */,
 				C8D0483913F62E5F00273F9A /* PhotoView.h */,
 				C8D0483A13F62E5F00273F9A /* PhotoView.m */,
+				C8D0485D13F78FBD00273F9A /* PhotoStream.h */,
+				C8D0485E13F78FBD00273F9A /* PhotoStream.m */,
 			);
 			path = PhotoPlayground;
 			sourceTree = "<group>";
@@ -385,6 +390,7 @@
 				C8D0481D13EDC9FD00273F9A /* FlickrAuthViewController.m in Sources */,
 				C8D0483413F4D6F100273F9A /* Photo.m in Sources */,
 				C8D0483B13F62E5F00273F9A /* PhotoView.m in Sources */,
+				C8D0485F13F78FBD00273F9A /* PhotoStream.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

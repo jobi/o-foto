@@ -24,6 +24,7 @@
 - (void)loadData;
 
 @property (readonly) NSString *title;
+@property (nonatomic, copy, readonly) NSDate *dateTaken;
 @property (nonatomic, retain) OFFlickrAPIContext *context;
 @property (nonatomic, assign) id<PhotoDelegate> delegate;
 

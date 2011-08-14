@@ -10,6 +10,7 @@
 #import "PhotoPlaygroundViewController.h"
 #import "FlickrApiKey.h"
 #import "Photo.h"
+#import "PhotoStream.h"
 
 @interface PhotoPlaygroundAppDelegate()
 
@@ -25,6 +26,7 @@
 @synthesize viewController = _viewController;
 @synthesize authProvider;
 @synthesize flickrContext;
+@synthesize photoStream;
 
 - (id)init
 {
@@ -78,13 +80,28 @@
 
 - (void)loadPhotos
 {
+    PhotoStream *aPhotoStream  = [[PhotoStream alloc]initWithFlickrContext:flickrContext];
+    aPhotoStream.delegate = self;
+    self.photoStream = aPhotoStream;
+    [aPhotoStream release];
+    
+    
+    /*
     OFFlickrAPIRequest *recentRequest = [[OFFlickrAPIRequest alloc] initWithAPIContext:flickrContext];
     
     recentRequest.delegate = self;
     [recentRequest callAPIMethodWithGET:@"flickr.photos.search"
                               arguments:[NSDictionary dictionaryWithObjectsAndKeys:@"me", @"user_id",
-                                                                                   @"yaoshuang", @"tags", 
+                                                                                   @"litl", @"tags", 
+                                                                                   //@"5", @"per_page",
                                                                                    nil]];
+     */
+}
+
+- (void)photoStreamChanged:(PhotoStream *)aPhotoStream
+{
+    for (Photo *photo in photoStream.photos)
+        [self.viewController addPhoto:photo];
 }
 
 - (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest didCompleteWithResponse:(NSDictionary *)inResponseDictionary
