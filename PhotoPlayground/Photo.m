@@ -57,6 +57,14 @@ static NSDateFormatter *dateFormatter = nil;
     return self;
 }
 
+- (void)cancelLoadData
+{
+    if (self.dataConnection) {
+        [self.dataConnection cancel];
+        self.dataConnection = nil;
+    }
+}
+
 - (void)loadData
 {
     if (!self.dataConnection) {

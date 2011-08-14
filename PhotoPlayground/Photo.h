@@ -22,6 +22,7 @@
 + (Photo *)photoWithContext:(OFFlickrAPIContext *)context dictionary:(NSDictionary *)dictionary;
 
 - (void)loadData;
+- (void)cancelLoadData;
 
 @property (readonly) NSString *title;
 @property (nonatomic, copy, readonly) NSDate *dateTaken;

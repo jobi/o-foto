@@ -156,8 +156,10 @@
                 [photoView loadImage];
             }
         } else {
-            if (photoView.superview)
+            if (photoView.superview) {
+                [photoView unloadImage];
                 [photoView removeFromSuperview];
+            }
         }
     }
 }

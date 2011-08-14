@@ -69,6 +69,15 @@
     [photo loadData];
 }
 
+- (void)unloadImage
+{
+    if (self.image) {
+        self.image = nil;
+    } else {
+        [photo cancelLoadData];
+    }
+}
+
 - (void)photo:(Photo *)photo dataLoaded:(NSData *)data
 {
     UIImage *anImage = [[UIImage alloc]initWithData:data];

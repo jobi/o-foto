@@ -23,6 +23,7 @@
 + (PhotoView *)photoViewWithPhoto:(Photo *)photo;
 
 - (void)loadImage;
+- (void)unloadImage;
 
 @property (nonatomic, assign) id<PhotoViewDelegate> delegate;
 @property (nonatomic, retain) Photo *photo;
