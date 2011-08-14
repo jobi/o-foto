@@ -59,16 +59,18 @@ static NSDateFormatter *dateFormatter = nil;
 
 - (void)loadData
 {
-    NSURLRequest *request=[NSURLRequest requestWithURL:mediumSizeURL
-                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                       timeoutInterval:60.0];
-
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request
-                                                                  delegate:self];
-    self.dataConnection = connection;
-    [connection release];
-    
-    self.dataReceived = [NSMutableData data];    
+    if (!self.dataConnection) {
+        NSURLRequest *request=[NSURLRequest requestWithURL:mediumSizeURL
+                                               cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                           timeoutInterval:60.0];
+        
+        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request
+                                                                      delegate:self];
+        self.dataConnection = connection;
+        [connection release];
+        
+        self.dataReceived = [NSMutableData data];
+    }
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
@@ -78,7 +80,7 @@ static NSDateFormatter *dateFormatter = nil;
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    [self.dataConnection release];
+    self.dataConnection = nil;
     [self.delegate photo:self dataLoaded:self.dataReceived];
     self.dataReceived = nil;
 }

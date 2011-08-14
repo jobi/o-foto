@@ -9,16 +9,16 @@
 #import "PhotoPlaygroundViewController.h"
 #import "ObjectiveFlickr.h"
 #import "FlickrAuthViewController.h"
+#import "PhotoStreamView.h"
 
 @interface PhotoPlaygroundViewController()
-
-@property (nonatomic, retain) NSMutableArray *photoViews;
 
 @end
 
 @implementation PhotoPlaygroundViewController
 
-@synthesize photoViews;
+@synthesize photoStreamView;
+@synthesize photoStream;
 
 - (void)didReceiveMemoryWarning
 {
@@ -30,20 +30,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    photoViews = [[NSMutableArray alloc] init];
-    
-    NSString *imageName = [[NSBundle mainBundle] pathForResource:@"pattern" ofType:@"jpg"];
-    UIImage *image = [UIImage imageWithContentsOfFile:imageName];
-    
-    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
 }
 
 - (void)viewDidUnload
 {
+    [self setPhotoStreamView:nil];
     [super viewDidUnload];
-    
-    self.photoViews = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -63,34 +55,18 @@
     [authViewController release];
 }
 
-- (void)photoView:(PhotoView *)photoView imageLoaded:(UIImage *)image
+- (void)setPhotoStream:(PhotoStream *)aPhotoStream
 {
-    photoView.layer.position = CGPointMake(self.view.frame.size.width * rand()/RAND_MAX,
-                                           self.view.frame.size.height * rand()/RAND_MAX);
-    photoView.bounds = CGRectMake(0, 0, image.size.width, image.size.height);
-    [self.view addSubview:photoView];
+    [aPhotoStream retain];
+    [photoStream release];
+    photoStream = aPhotoStream;
     
-    [photoView setAlpha:0.0f];
-    
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.5];
-    [photoView setAlpha:1.0];
-    [UIView commitAnimations];
-}
-
-- (void)addPhoto:(Photo *)photo
-{
-    PhotoView *photoView = [PhotoView photoViewWithPhoto:photo];
-    
-    photoView.delegate = self;
-    
-    [photoViews addObject:photoView];
-    
-    [photoView loadImage];
+    self.photoStreamView.photoStream = photoStream;
 }
 
 - (void)dealloc
 {    
+    [photoStreamView release];
     [super dealloc];
 }
 

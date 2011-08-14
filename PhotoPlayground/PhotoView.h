@@ -18,7 +18,7 @@
 
 @end
 
-@interface PhotoView : UIImageView <PhotoDelegate>
+@interface PhotoView : UIView <PhotoDelegate>
 
 + (PhotoView *)photoViewWithPhoto:(Photo *)photo;
 
@@ -26,5 +26,6 @@
 
 @property (nonatomic, assign) id<PhotoViewDelegate> delegate;
 @property (nonatomic, retain) Photo *photo;
+@property (nonatomic, retain) UIImage *image;
 
 @end

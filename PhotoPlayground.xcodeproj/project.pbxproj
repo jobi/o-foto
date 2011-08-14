@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C84825EE13F83A0100E371E1 /* PhotoStreamView.m in Sources */ = {isa = PBXBuildFile; fileRef = C84825ED13F83A0100E371E1 /* PhotoStreamView.m */; };
 		C8D0444013EA3B6900273F9A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0443F13EA3B6900273F9A /* UIKit.framework */; };
 		C8D0444213EA3B6900273F9A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0444113EA3B6900273F9A /* Foundation.framework */; };
 		C8D0444413EA3B6900273F9A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0444313EA3B6900273F9A /* CoreGraphics.framework */; };
@@ -60,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C84825EC13F83A0100E371E1 /* PhotoStreamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoStreamView.h; sourceTree = "<group>"; };
+		C84825ED13F83A0100E371E1 /* PhotoStreamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoStreamView.m; sourceTree = "<group>"; };
 		C8D0443B13EA3B6900273F9A /* PhotoPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8D0443F13EA3B6900273F9A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C8D0444113EA3B6900273F9A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -199,6 +202,8 @@
 				C8D0483A13F62E5F00273F9A /* PhotoView.m */,
 				C8D0485D13F78FBD00273F9A /* PhotoStream.h */,
 				C8D0485E13F78FBD00273F9A /* PhotoStream.m */,
+				C84825EC13F83A0100E371E1 /* PhotoStreamView.h */,
+				C84825ED13F83A0100E371E1 /* PhotoStreamView.m */,
 			);
 			path = PhotoPlayground;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 				C8D0483413F4D6F100273F9A /* Photo.m in Sources */,
 				C8D0483B13F62E5F00273F9A /* PhotoView.m in Sources */,
 				C8D0485F13F78FBD00273F9A /* PhotoStream.m in Sources */,
+				C84825EE13F83A0100E371E1 /* PhotoStreamView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

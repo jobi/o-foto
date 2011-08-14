@@ -100,21 +100,7 @@
 
 - (void)photoStreamChanged:(PhotoStream *)aPhotoStream
 {
-    for (Photo *photo in photoStream.photos)
-        [self.viewController addPhoto:photo];
-}
-
-- (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest didCompleteWithResponse:(NSDictionary *)inResponseDictionary
-{    
-    NSArray *photos = [inResponseDictionary valueForKeyPath:@"photos.photo"];
-    
-    for (NSDictionary *photoDict in photos)
-        [self.viewController addPhoto:[Photo photoWithContext:flickrContext dictionary:photoDict]];
-}
-
-- (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest didFailWithError:(NSError *)inError
-{
-    NSLog(@"Got error %@", inError);
+    self.viewController.photoStream = photoStream;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

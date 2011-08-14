@@ -19,6 +19,7 @@
 
 @synthesize delegate;
 @synthesize photo;
+@synthesize image;
 
 + (PhotoView *)photoViewWithPhoto:(Photo *)photo
 {
@@ -42,6 +43,7 @@
         
         self.userInteractionEnabled = YES;
         self.multipleTouchEnabled = YES;
+        self.exclusiveTouch = YES;
     }
     
     return self;
@@ -61,17 +63,20 @@
     if (photo == nil)
         return;
     
+    if (self.image)
+        return;
+    
     [photo loadData];
 }
 
 - (void)photo:(Photo *)photo dataLoaded:(NSData *)data
 {
-    UIImage *image = [[UIImage alloc]initWithData:data];
+    UIImage *anImage = [[UIImage alloc]initWithData:data];
     
-    self.image = image;
-    [self.delegate photoView:self imageLoaded:image];
+    self.image = anImage;
+    [self.delegate photoView:self imageLoaded:anImage];
 
-    [image release];
+    [anImage release];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -160,6 +165,49 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+}
+
+- (void)setImage:(UIImage *)anImage
+{
+    [anImage retain];
+    [image release];
+    image = anImage;
+    
+    [self setNeedsDisplay];
+}
+
+- (void)drawRect:(CGRect)rect
+{
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextClipToRect(context, rect);
+    
+    if (self.image) {
+        CGContextSaveGState(context);
+        CGContextTranslateCTM(context, 0.0, self.bounds.size.height);
+        CGContextScaleCTM(context, 1.0, -1.0);
+
+        CGContextDrawImage(context, self.bounds, self.image.CGImage);
+        
+        CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
+        CGContextSetLineWidth(context, 4.0);
+        CGContextStrokeRect(context, self.bounds);
+        
+        CGContextRestoreGState(context);
+        
+    } else {
+        CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
+        CGContextSetLineWidth(context, 4.0);
+        CGContextStrokeRect(context, self.bounds);
+
+        CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
+        CGContextFillRect(context, rect);
+        
+        CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
+        CGContextSetLineWidth(context, 4.0);
+        CGContextStrokeRect(context, self.bounds);
+
+    }
 }
 
 - (void)dealloc

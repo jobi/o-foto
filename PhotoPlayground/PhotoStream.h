@@ -23,7 +23,6 @@
 @property (nonatomic, assign) id<PhotoStreamDelegate> delegate;
 @property (nonatomic, retain, readonly) NSArray *photos;
 
-
 - initWithFlickrContext:(OFFlickrAPIContext *)flickrContext;
 
 @end
