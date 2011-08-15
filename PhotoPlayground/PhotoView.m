@@ -160,14 +160,14 @@
     CGFloat d = (y1-y2)*(y1-y2) + (x1-x2)*(x1-x2);
 	if (d < 0.1) {
         m = CGAffineTransformMakeTranslation(x1p-x1, y1p-y1);
+    } else {
+        CGFloat a = (y1-y2)*(y1p-y2p) + (x1-x2)*(x1p-x2p);
+        CGFloat b = (y1-y2)*(x1p-x2p) - (x1-x2)*(y1p-y2p);
+        CGFloat tx = (y1*x2 - x1*y2)*(y2p-y1p) - (x1*x2 + y1*y2)*(x1p+x2p) + x1p*(y2*y2 + x2*x2) + x2p*(y1*y1 + x1*x1);
+        CGFloat ty = (x1*x2 + y1*y2)*(-y2p-y1p) + (y1*x2 - x1*y2)*(x1p-x2p) + y1p*(y2*y2 + x2*x2) + y2p*(y1*y1 + x1*x1);
+        
+        m = CGAffineTransformMake(a/d, -b/d, b/d, a/d, tx/d, ty/d);
     }
-    
-	CGFloat a = (y1-y2)*(y1p-y2p) + (x1-x2)*(x1p-x2p);
-	CGFloat b = (y1-y2)*(x1p-x2p) - (x1-x2)*(y1p-y2p);
-	CGFloat tx = (y1*x2 - x1*y2)*(y2p-y1p) - (x1*x2 + y1*y2)*(x1p+x2p) + x1p*(y2*y2 + x2*x2) + x2p*(y1*y1 + x1*x1);
-	CGFloat ty = (x1*x2 + y1*y2)*(-y2p-y1p) + (y1*x2 - x1*y2)*(x1p-x2p) + y1p*(y2*y2 + x2*x2) + y2p*(y1*y1 + x1*x1);
-	
-    m = CGAffineTransformMake(a/d, -b/d, b/d, a/d, tx/d, ty/d);
     
     [self.layer setAffineTransform:CGAffineTransformConcat([self.layer affineTransform],  m)];
 }
