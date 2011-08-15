@@ -73,6 +73,8 @@
     if (page < nPages) {
         [self loadPage:page + 1];
     }
+    
+    [inRequest release];
 }
 
 
