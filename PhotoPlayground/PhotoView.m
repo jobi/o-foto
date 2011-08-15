@@ -115,10 +115,10 @@
     CGPoint point;
     CGPoint previous;
     
-    for (UITouch *touch in touches) {
-        point = [touch locationInView:self.superview];
-        previous = [touch previousLocationInView:self.superview];
-    }
+    UITouch *touch = [[touches allObjects] objectAtIndex:0];
+    
+    point = [touch locationInView:self.superview];
+    previous = [touch previousLocationInView:self.superview];
     
     CGPoint position = self.layer.position;
     
