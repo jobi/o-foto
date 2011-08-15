@@ -10,20 +10,16 @@
 #import "Photo.h"
 
 #define PADDING 400.0f
-#define SPREAD 300.0f
 
 @interface PhotoStreamView()
 
 - (void)baseInit;
 - (void)updateContentSize;
 - (void)createViewsForPhotos:(NSArray *)photos;
-- (CGFloat)pixelPerSecond:(NSTimeInterval)timeInterval;
 - (void)updateVisiblePhotoViews;
-- (void)updateDateRange;
 
 @property (nonatomic, retain) NSMutableArray *photoViews;
-@property (nonatomic, copy) NSDate *startDate;
-@property (nonatomic, copy) NSDate *endDate;
+
 
 @end
 
@@ -31,9 +27,6 @@
 
 @synthesize photoStream;
 @synthesize photoViews;
-@synthesize startDate;
-@synthesize endDate;
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -74,52 +67,21 @@
     photoStream = aPhotoStream;
     photoStream.delegate = self;
     
-    [self updateDateRange];
-    [self updateContentSize];
     [self createViewsForPhotos:photoStream.photos];
+    [self updateContentSize];
 }
 
 - (void)photoStream:(PhotoStream *)photoStream loadedPhotos:(NSArray *)photos
 {
-    [self updateDateRange];
-    [self updateContentSize];
     [self createViewsForPhotos:photos];
-}
-
-- (CGFloat)pixelPerSecond:(NSTimeInterval)timeInterval
-{
-    NSTimeInterval secondsInAMonth = 30 * 24 * 3600;
-    
-    return PADDING + self.frame.size.width * timeInterval / secondsInAMonth;
-}
-
-- (NSDate *)dateForOffset:(CGFloat)offset
-{
-    NSTimeInterval secondsInAMonth = 30 * 24 * 3600;
-    NSTimeInterval time = secondsInAMonth * offset / self.frame.size.width;
-    return [NSDate dateWithTimeInterval:time
-                              sinceDate:self.startDate];
-}
-
-- (void)updateDateRange
-{
-    NSArray *photos = photoStream.photos;
-
-    if ([photos count] >= 1) {
-        self.startDate = ((Photo *)[photos objectAtIndex:0]).dateTaken;
-        self.endDate = ((Photo *)[photos objectAtIndex:[photos count] - 1]).dateTaken;
-    } else {
-        self.startDate = nil;
-        self.endDate = nil;
-    }
+    [self updateContentSize];
 }
 
 - (void)updateContentSize
 {
-    
-    NSTimeInterval timeInterval = [self.endDate timeIntervalSinceDate:self.startDate];
-    
-    self.contentSize = CGSizeMake([self pixelPerSecond:timeInterval] + PADDING,
+    NSUInteger count = [self.photoViews count];
+    PhotoView *lastView = count?[self.photoViews objectAtIndex:count - 1]:nil;
+    self.contentSize = CGSizeMake(lastView?lastView.center.x + PADDING:0.0f,
                                   self.frame.size.height);
 }
 
@@ -136,15 +98,15 @@
 
 - (void)createViewsForPhotos:(NSArray *)photos
 {
+    NSUInteger count = [self.photoViews count];
+    CGFloat previousX = count?((PhotoView *)[self.photoViews objectAtIndex:count - 1]).center.x:PADDING;
+    
     for (Photo *photo in photos) {
         PhotoView *photoView = [PhotoView photoViewWithPhoto:photo];
         photoView.delegate = self;
         [self.photoViews addObject:photoView];
         
-        //photoView.layer.anchorPoint = CGPointMake(0.5f, 0.5f);
-        
-        CGFloat x = [self pixelPerSecond:[photoView.photo.dateTaken timeIntervalSinceDate:self.startDate]];
-        x += 2 * SPREAD * rand()/RAND_MAX - SPREAD;
+        CGFloat x = previousX + 250 + 20 * rand() / RAND_MAX;
         CGFloat y = self.frame.size.height * rand()/RAND_MAX;
         photoView.center = CGPointMake(x, y);
         photoView.bounds = CGRectMake(0, 0, 500, 500);
@@ -156,6 +118,7 @@
         [photoView setAlpha:1.0];
         [UIView commitAnimations];
 
+        previousX = x;
     }
     
     [self updateVisiblePhotoViews];
@@ -163,16 +126,20 @@
 
 - (void)updateVisiblePhotoViews
 {
-    NSDate *visibleStartDate = [self dateForOffset:self.contentOffset.x - self.frame.size.width - SPREAD];
-    NSDate *visibleEndDate = [self dateForOffset:self.contentOffset.x + 2 * self.frame.size.width + SPREAD];
-    
     for (PhotoView *photoView in self.photoViews) {
-        if ([photoView.photo.dateTaken earlierDate:visibleStartDate] == visibleStartDate &&
-            [photoView.photo.dateTaken laterDate:visibleEndDate] == visibleEndDate) {
+        CGFloat x = photoView.center.x;
+        CGFloat offset = self.contentOffset.x;
+        CGFloat width = self.frame.size.width;
+        
+        if (x >= offset - width &&
+            x <=  offset + 2 * width) {
             if (photoView.superview != self) {
                 [self addSubview:photoView];
                 [photoView loadImage];
             }
+        } else if (x >= offset - 3 * width &&
+                   x <= offset + 4 * width) {
+            [photoView loadImage];
         } else {
             if (photoView.superview) {
                 [photoView unloadImage];
