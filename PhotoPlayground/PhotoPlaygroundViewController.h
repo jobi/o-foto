@@ -13,11 +13,7 @@
 @class OFFlickrAPIContext;
 @class PhotoStreamView;
 
-@interface PhotoPlaygroundViewController : UIViewController {
-    @private
-    OFFlickrAPIContext *flickrAPIContext;
-    PhotoStreamView *photoStreamView;
-}
+@interface PhotoPlaygroundViewController : UIViewController
 
 - (void)showAuthenticationViewWithURL:(NSURL *)authURL;
 
