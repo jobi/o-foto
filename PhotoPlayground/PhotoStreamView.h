@@ -10,7 +10,7 @@
 #import "PhotoStream.h"
 #import "PhotoView.h"
 
-@interface PhotoStreamView : UIScrollView <UIScrollViewDelegate, PhotoViewDelegate>
+@interface PhotoStreamView : UIScrollView <UIScrollViewDelegate, PhotoViewDelegate, PhotoStreamDelegate>
 
 @property (nonatomic, retain) PhotoStream *photoStream;
 

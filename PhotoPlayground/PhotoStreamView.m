@@ -16,9 +16,10 @@
 
 - (void)baseInit;
 - (void)updateContentSize;
-- (void)createViews;
+- (void)createViewsForPhotos:(NSArray *)photos;
 - (CGFloat)pixelPerSecond:(NSTimeInterval)timeInterval;
 - (void)updateVisiblePhotoViews;
+- (void)updateDateRange;
 
 @property (nonatomic, retain) NSMutableArray *photoViews;
 @property (nonatomic, copy) NSDate *startDate;
@@ -71,13 +72,18 @@
     [photoStream release];
     
     photoStream = aPhotoStream;
+    photoStream.delegate = self;
     
-    NSArray *photos = photoStream.photos;
-    self.startDate = ((Photo *)[photos objectAtIndex:0]).dateTaken;
-    self.endDate = ((Photo *)[photos objectAtIndex:[photos count] - 1]).dateTaken;
-    
+    [self updateDateRange];
     [self updateContentSize];
-    [self createViews];
+    [self createViewsForPhotos:photoStream.photos];
+}
+
+- (void)photoStream:(PhotoStream *)photoStream loadedPhotos:(NSArray *)photos
+{
+    [self updateDateRange];
+    [self updateContentSize];
+    [self createViewsForPhotos:photos];
 }
 
 - (CGFloat)pixelPerSecond:(NSTimeInterval)timeInterval
@@ -95,11 +101,23 @@
                               sinceDate:self.startDate];
 }
 
+- (void)updateDateRange
+{
+    NSArray *photos = photoStream.photos;
+
+    if ([photos count] >= 1) {
+        self.startDate = ((Photo *)[photos objectAtIndex:0]).dateTaken;
+        self.endDate = ((Photo *)[photos objectAtIndex:[photos count] - 1]).dateTaken;
+    } else {
+        self.startDate = nil;
+        self.endDate = nil;
+    }
+}
+
 - (void)updateContentSize
 {
     
     NSTimeInterval timeInterval = [self.endDate timeIntervalSinceDate:self.startDate];
-    //timeInterval += 2 * 30 * 24 * 3600;
     
     self.contentSize = CGSizeMake([self pixelPerSecond:timeInterval] + PADDING,
                                   self.frame.size.height);
@@ -116,9 +134,9 @@
 
 }
 
-- (void)createViews
+- (void)createViewsForPhotos:(NSArray *)photos
 {
-    for (Photo *photo in self.photoStream.photos) {
+    for (Photo *photo in photos) {
         PhotoView *photoView = [PhotoView photoViewWithPhoto:photo];
         photoView.delegate = self;
         [self.photoViews addObject:photoView];

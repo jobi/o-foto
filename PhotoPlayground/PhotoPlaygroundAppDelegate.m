@@ -81,26 +81,10 @@
 - (void)loadPhotos
 {
     PhotoStream *aPhotoStream  = [[PhotoStream alloc]initWithFlickrContext:flickrContext];
-    aPhotoStream.delegate = self;
     self.photoStream = aPhotoStream;
     [aPhotoStream release];
     
-    
-    /*
-    OFFlickrAPIRequest *recentRequest = [[OFFlickrAPIRequest alloc] initWithAPIContext:flickrContext];
-    
-    recentRequest.delegate = self;
-    [recentRequest callAPIMethodWithGET:@"flickr.photos.search"
-                              arguments:[NSDictionary dictionaryWithObjectsAndKeys:@"me", @"user_id",
-                                                                                   @"litl", @"tags", 
-                                                                                   //@"5", @"per_page",
-                                                                                   nil]];
-     */
-}
-
-- (void)photoStreamChanged:(PhotoStream *)aPhotoStream
-{
-    self.viewController.photoStream = photoStream;
+    self.viewController.photoStream = self.photoStream;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -13,7 +13,7 @@
 
 @protocol PhotoStreamDelegate <NSObject>
 
-- (void)photoStreamChanged:(PhotoStream *)photoStream;
+- (void)photoStream:(PhotoStream *)photoStream loadedPhotos:(NSArray *)photos;
 
 @end
 
